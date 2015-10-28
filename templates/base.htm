@@ -1,0 +1,30 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	{% load staticfiles %}
+    <title>Nexmo - {% block title %} welcome!{% endblock %}</title>
+    <script type="text/javascript" src="/WebResources/ClientGlobalContext.js.aspx"></script>
+    <script type="text/javascript" src="/WebResources/new_jquery_1.7.1.min"></script>
+     <script type="text/javascript" src="/WebResources/new_jquery_ui_1.8.18.custom.min.js"></script>
+    <script type="text/javascript" src="/WebResources/new_Configuration.js"></script>
+    <script type="text/javascript" src="/WebResources/new_SDK.MetaData.js"></script>
+    <script type="text/javascript" src="/WebResources/new_SDK.Soap.js"></script>
+    <link rel="stylesheet" href="/WebResources/new_Configuration.css" />
+    <link rel="Stylesheet" href="/WebResources/new_jquery_ui_1.8.18.custom.css" />
+	<link rel="stylesheet" href='{% static "Configuration.css" %}' />
+    
+</head>
+<body class="body">
+    <div id="defaults" class="pageWrapper">
+		<div class="logoWrapper"><img src="{% static 'nexmo-logo.png' %}" alt="Nexmo" width="200"></div> 
+		{% if request.session.logged_in %}
+			<div style="float:right"><a href="/logout">Logout</a></div>
+		{%endif%}
+        {% block body_block %}{% endblock %}
+    </div>
+     <div id="progressSpinner" style="z-index:1000;position:absolute; top: 20%;left: 30%; background:rgba(255,255,255,1) none repeat scroll 0% 0%; padding: 20px;overflow:auto;border:1px solid; display: block; background-color: #FFFFCC; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: small; font-weight: bold; color: #333399; display:none">
+        <p id="progressText">
+        </p>
+    </div>
+</body>
+</html>

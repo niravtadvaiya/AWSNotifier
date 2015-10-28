@@ -1,0 +1,50 @@
+{% extends 'base.htm' %}
+{% load staticfiles %}
+{% block title %}Login{% endblock %}
+{% block body_block %}
+        <form method="post">{% csrf_token %}
+			<table class="tableStyle">
+            <tr>
+                <td colspan="2">
+                    <div class="areaHeader">
+                        Nexmo Login Details
+                    </div>
+					{% if messages %}
+						{% for message in messages %}
+							<div {% if message.tags %} class="isa_{{ message.tags }}"{% endif %}>{{ message }}</div>
+						{% endfor %}
+					{% endif %}
+
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style2">
+                    <label for="dName">
+                        Username</label>
+                </td>
+                <td class="auto-style1">
+                    <input id="NKey"  type="text" name="NKey"   />
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style2">
+                    <label for="dLine1">
+                        Password</label>
+                </td>
+                <td class="auto-style1">
+                    <input id="NSecret" type="password"  name="NSecret" class="customTxtBox" />
+                </td>
+            </tr>
+            <tr>
+			<td class="auto-style2">&nbsp;</td>
+                <td class="auto-style1">
+                    <div>
+                        <button id="saveDefaults" name="saveDefaults" class="blueBtn">
+                            Login</button> 
+							<a href="https://help.nexmo.com/hc/en-us" target="_blank">Help ?</a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+		</form>
+{% endblock %}
