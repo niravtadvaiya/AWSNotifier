@@ -12,19 +12,24 @@
     <link rel="stylesheet" href="/WebResources/new_Configuration.css" />
     <link rel="Stylesheet" href="/WebResources/new_jquery_ui_1.8.18.custom.css" />
 	<link rel="stylesheet" href='{% static "Configuration.css" %}' />
-    
+    <!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">3WF3KCPEARPP-41-32</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">90a3d448-65e3-4c8b-9e91-66912a00b146</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">http://asplportal.advaiya.com/PWA/Apps Development for Nexmo/_layouts/15/DocIdRedir.aspx?ID=3WF3KCPEARPP-41-32, 3WF3KCPEARPP-41-32</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+
 </head>
 <body class="body">
-    <div id="defaults" class="pageWrapper">
-		<div class="logoWrapper"><img src="{% static 'nexmo-logo.png' %}" alt="Nexmo" width="200"></div> 
+<div class="body">
+	<div class="pageWrapper">
+		<div class="logoWraper"><img src='{% static "nexmo-logo.png" %}' alt="Nexmo" width="180"></div>
 		{% if request.session.logged_in %}
 			<div style="float:right"><a href="/logout">Logout</a></div>
 		{%endif%}
         {% block body_block %}{% endblock %}
-    </div>
-     <div id="progressSpinner" style="z-index:1000;position:absolute; top: 20%;left: 30%; background:rgba(255,255,255,1) none repeat scroll 0% 0%; padding: 20px;overflow:auto;border:1px solid; display: block; background-color: #FFFFCC; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: small; font-weight: bold; color: #333399; display:none">
-        <p id="progressText">
-        </p>
-    </div>
+	</div>
+</div>  
 </body>
 </html>

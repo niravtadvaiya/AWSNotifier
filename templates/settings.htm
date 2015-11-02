@@ -3,93 +3,65 @@
 {% block title %}configuration{% endblock %}
 {% block body_block %}
         <form method="post">{% csrf_token %}
-			<table class="tableStyle">
-            <tr>
-                <td colspan="2">
-                    <div class="areaHeader">
-                        Nexmo Configuration Details
-                    </div>
-                </td>
-            </tr>
-			<tr>
-				<td colspan="2">
-					{% if messages %}
+		<h1 class="heading1">Configuration Settings</h1>
+			<div class="mainContent">
+			{% if messages %}
+			<div class="mb-20">
 						{% for message in messages %}
 						<div {% if message.tags %} class="isa_{{ message.tags }}"{% endif %}>{{ message }}</div>
 						{% endfor %}
+						</div>
 					{% endif %}
-				</td>
-            </tr>
-			<tr>
-                <td class="auto-style2">
-                    <label for="dName">
-                        Nexmo API Key</label>
-                </td>
-                <td class="auto-style1">
-                    <input id="NKey"  type="text" name="NKey"  value="{{nxmo_conf.NKey}}" />
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style2">
-                    <label for="dLine1">
-                        Nexmo Secret Key</label>
-                </td>
-                <td class="auto-style1">
-                    <input id="NSecret" type="text"  name="NSecret" value="{{nxmo_conf.NSecret}}" />
-                </td>
-            </tr>
-			<tr>
-                <td class="auto-style2">
-                    <label for="dLine2">
-                        Recipients Number</label>
-                </td>
-                <td class="auto-style1">
-                    <input id="NRecv" type="text" name="NRecv" value="{{nxmo_conf.NRecv}}" /> 
-                </td>
-            </tr>
-            
-            <tr>
-                <td class="auto-style2">
-                    <label for="dLine2">
-                        Enable Nexmo SMS</label>
-                </td>
-                <td class="auto-style1" align="left">
-					{% if nxmo_conf.EnableSMS == '0' %}
-						<input id="EnableSMS"name="EnableSMS" type="checkbox" class="customCheckBox" />
-					{%else%}
-						<input id="EnableSMS"name="EnableSMS" type="checkbox" class="customCheckBox" checked="checked" />
-					{%endif%}
-                </td>
-            </tr>
+			<div class="mb-20">
+				<div class="fieldLabel">Nexmo API Key<span class="handCursor"></span></div>
+				<div>
+					<input id="NKey"  type="text" name="NKey"  value="{{nxmo_conf.NKey}}" class="customTxtBox" />
+				</div>
+			</div>
+
+			<div class="mb-20">
+				<div class="fieldLabel">Nexmo Secret Key<span class="handCursor"></span></div>
+				<div>
+					<input id="NSecret" type="text"  name="NSecret" value="{{nxmo_conf.NSecret}}" class="customTxtBox" />
+				</div>
+			</div>
 			
-			<tr>
-                <td class="auto-style2">
-                    <label for="dLine2">
-                      Username</label>
-                </td>
-                <td class="auto-style1" align="left">
-					<input id="UserName"name="UserName" type="text" value="{{nxmo_conf.username}}" />
-                </td>
-            </tr>
-			<tr>
-                <td class="auto-style2">
-                    <label for="dLine2">
-                      Password</label>
-                </td>
-                <td class="auto-style1" align="left">
+			<div class="mb-20">
+				<div class="fieldLabel">Recipients Number<span class="handCursor"></span></div>
+				<div>
+					<input id="NRecv" type="text" name="NRecv" value="{{nxmo_conf.NRecv}}" class="customTxtBox" /> 
+				</div>
+			</div>
+			
+			
+			<div class="mb-20">
+				<div class="font16">Enable SMS 
+				{% if nxmo_conf.EnableSMS == '0' %}
+						<input id="EnableSMS"name="EnableSMS" type="checkbox" />
+					{%else%}
+						<input id="EnableSMS"name="EnableSMS" type="checkbox" checked="checked" />
+					{%endif%}
+				</div>
+			</div>
+			
+			<div class="mb-20">
+				<div class="fieldLabel">Username<span class="handCursor"></span></div>
+				<div>
+					<input id="UserName"name="UserName" type="text" value="{{nxmo_conf.username}}" class="customTxtBox" />
+				</div>
+			</div>
+			
+			<div class="mb-20">
+				<div class="fieldLabel">Password<span class="handCursor"></span></div>
+				<div>
 					<input id="password"name="password" type="password" class="customTxtBox" value="{{nxmo_conf.password}}" />
-                </td>
-            </tr>
-            <tr>
-			<td class="auto-style2">&nbsp;</td>
-                <td class="auto-style1">
-                    <div>
-                        <button id="saveDefaults" name="saveDefaults" class="blueBtn">
-                            Save</button> 
-							<a href="https://help.nexmo.com/hc/en-us" target="_blank">Help ?</a>
-                    </div>
-                </td>
-            </tr>
-        </table>
+				</div>
+			</div>
+			<div style="color:orange">This credentials update effects only this portal not to Nexmo official site.</div><br />
+			
+			<div><input type="submit" value="Save" class="blueBtn"></div
+			<div class="clear"></div>
+		</div>
+    </div>
 		</form>
 {% endblock %}
