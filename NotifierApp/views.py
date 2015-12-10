@@ -1,3 +1,4 @@
+
 from django.shortcuts import render,render_to_response,redirect
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -30,7 +31,7 @@ def index(request):
 
 	if data_dict['Type'] == 'Notification':
 		nexmo_conf =  nexmo_config()
-		FROM = dequote(nexmo_conf['NUser'])
+		FROM = dequote(nexmo_conf['NexmoFrom'])
 		TO = dequote(nexmo_conf['NRecv'])
 		EnableSMS = nexmo_conf['EnableSMS'].lower()
 		data = json.loads(data_dict['Message'])
@@ -95,7 +96,7 @@ def settings(request):
 		messages.success(request,"Your data is saved successfully.")
 		return render_to_response('settings.htm',{'nxmo_conf':nxmo_conf},context_instance=RequestContext(request))
 	  except Exception as err:
-		messages.error(request,"We are find some errors.")
+		messages.error(request,"We are find some errors." + str(err))
 		return render_to_response('settings.htm',{'nxmo_conf':nxmo_conf},context_instance=RequestContext(request))
 
 def config_reader(key):
@@ -113,7 +114,7 @@ def nexmo_config():
 	nxmo_conf={}
 	nxmo_conf['NKey']=config_reader('api_key')
 	nxmo_conf['NSecret']=config_reader('secret_key')
-	nxmo_conf['NUser']=config_reader('fromuser')
+	nxmo_conf['NexmoFrom']=config_reader('fromuser')
 	nxmo_conf['NRecv']=config_reader('touser')
 	nxmo_conf['EnableSMS']=config_reader('EnableSMS')
 	nxmo_conf['username']=config_reader('username')
