@@ -1,0 +1,4 @@
+aws_alert.bat
+log.txt
+monitor.conf
+*.pyc

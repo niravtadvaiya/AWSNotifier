@@ -1,0 +1,21 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	{% load staticfiles %}
+    <title>Nexmo - {% block title %} welcome!{% endblock %}</title>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+    <link rel="stylesheet" href='{% static "Configuration.css" %}' />
+</head>
+<body class="body">
+<div class="body">
+	<div class="pageWrapper">
+		<div class="logoWraper"><img src='{% static "nexmo-logo.png" %}' alt="Nexmo" width="180"></div>
+		{% if request.session.logged_in %}
+			<div style="float:right"><a href="/logout">Logout</a></div>
+		{%endif%}
+        {% block body_block %}{% endblock %}
+	</div>
+</div>  
+</body>
+</html>
