@@ -175,7 +175,7 @@ def ajax_validator(request):
 			django_html = {'error':'false','html':msisdn}
 			return HttpResponse(json.dumps(django_html))
 		except nexmo.AuthenticationError as err:
-			django_html = {'error':'true','html':"Please enter the authenticated API credentials."}
+			django_html = {'error':'true','html':"Please enter valid Nexmo Key and Secret."}
 			return HttpResponse(json.dumps(django_html))
 		except Exception as err:
 			django_html = {'error':'true','html':str(err)}
