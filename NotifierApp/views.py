@@ -69,6 +69,17 @@ def settings(request):
 		recv = recv.replace('+','')
 		recv = recv.replace('-','')
 
+		api_key = request.POST['NKey'].strip()
+		api_secret = request.POST['NSecret'].strip()
+
+		if trim(api_key) and trim(api_secret):
+			try:
+				conn = nexmo.Client(key=str(api_key),secret=str(api_secret))
+				json_number =  conn.get_account_numbers()
+				from_number = json_number['numbers'][0]['msisdn']
+			except:
+				messages.error(request,"Please enter a valid Nexmo API Key and Secret!")
+				return render_to_response('settings.htm',{'nxmo_conf':nxmo_conf},context_instance=RequestContext(request))
 
 		from_number = request.POST['NexmoFrom']
 		myvar = ''
@@ -95,7 +106,7 @@ def settings(request):
 		messages.success(request,"Your data is saved successfully.")
 		return render_to_response('settings.htm',{'nxmo_conf':nxmo_conf},context_instance=RequestContext(request))
 	  except Exception as err:
-		messages.error(request,"We are find some errors." + str(err))
+		messages.error(request,"We find some errors." + str(err))
 		return render_to_response('settings.htm',{'nxmo_conf':nxmo_conf},context_instance=RequestContext(request))
 
 def config_reader(key):
