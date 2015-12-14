@@ -7,7 +7,7 @@
 		   <div class="mainContent">
 			<div class="mb-20 client_msg" id="client_msg"> 
 			{% for message in messages %}
-				<div {% if message.tags %} class="isa_{{ message.tags }}"{% endif %}>{{ message }}</div>
+				<div {% if message.tags %} class="isa_{{ message.tags }}"{% endif %} id="msg_bord">{{ message }}</div>
 			{% endfor %}
 			</div>
 			<div class="mb-20">
@@ -33,17 +33,17 @@
 				<div>
 					<input type="hidden" value="{{nxmo_conf.NexmoFrom}}" id="nexfrom" />
 					<select name="NexmoFrom" id="NexmoFrom" class="customTxtBox">
-						<option value=""> -- Select From Number -- </option>
+						<option value=""> -- Please select -- </option>
 					</select>
 				</div>
 			</div>
 			
 			<div class="mb-20">
-				<div class="fieldLabel">Recipients Number<span class="handCursor"></span></div>
+				<div class="fieldLabel">Recipient's Number<span class="handCursor"></span></div>
 				<div>
 					<input id="NRecv" type="text" name="NRecv" value="{{nxmo_conf.NRecv}}" class="customTxtBox" /> 
 				</div>
-			<div style="color:orange">Type number with country code.eg +1 XXX XXX XXX</div>
+			<div style="color:orange">Type number with country code.</div>
 			</div>
 			
 			
@@ -70,7 +70,7 @@
 					<input id="password"name="password" type="password" class="customTxtBox" value="{{nxmo_conf.password}}" />
 				</div>
 			</div>
-			<div style="color:orange">This credentials update effects only this portal not to Nexmo official site.</div><br />
+			<div style="color:orange">These credentials work only for this app.</div><br />
 			
 			<div><input type="submit" value="Save" class="blueBtn"></div
 			<div class="clear"></div>
@@ -81,9 +81,9 @@
 	$(function(){ 
 	$.validator.addMethod("checkdef", function(value, element) {
 		 if (/^admin$/.test($.trim(value))) {
-			return false;  // FAIL validation when REGEX matches
+			return false;  
 		} else {
-			return true;   // PASS validation otherwise
+			return true;   
 		};
 	}, 'Please enter different Usename and Password.');
 	$.validator.addMethod("phonechck", function(value, element) {
@@ -161,7 +161,7 @@
 
 	function ajax_call(){
 		$nexfrom = $('#nexfrom').val()
-		var datahtml = '<option value=""> -- Select a From Number -- </option>'
+		var datahtml = '<option value=""> -- Please select -- </option>'
 		$.ajax({
 				url: '/ajax_validator/',
 			    type: 'post',

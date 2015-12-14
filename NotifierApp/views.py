@@ -147,11 +147,16 @@ def login(request):
 	if request.method == 'GET':
 		return render_to_response('login.htm',{},context_instance=RequestContext(request))
 	if request.method == 'POST':
+		username  = request.POST['NKey'].strip()
+		password  = request.POST['NSecret'].strip()
+		if username == '' and password == '':
+			messages.error(request,"Please enter the Username and Password.")
+			return render_to_response('login.htm',{},context_instance=RequestContext(request))
 		if request.POST['NKey']==config_reader('username') and request.POST['NSecret']==config_reader('password'):
 			request.session['logged_in']=True
 			return redirect("/settings/")
 		else:
-			messages.error(request,"Invalid login credentials.")
+			messages.error(request,"Please enter valid Username and Password.")
 			return render_to_response('login.htm',{},context_instance=RequestContext(request))
 		
 def logout(request):
