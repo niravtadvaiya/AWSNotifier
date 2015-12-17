@@ -65,3 +65,21 @@ AWS security settings
 2.  Select the **Custom TCP Rule,** and set the port number as **9033** and set source as **0.0.0.0/0** or specific IP to access internet as shown in the below image:
 
 ![](https://github.com/niravtadvaiya/AWSNotifier/blob/master/docs/4.png?raw=true)
+
+
+1.  Click on **Save**.
+
+Steps to use the AWSNotifier app
+================================
+
+1.  Go to the browser and type **&lt;&lt;AWS Instance IP&gt;&gt;:9033** (replace AWS Instance IP with your instance public IP address).
+
+2.  Login with default credentials - username: **admin** and password: **admin.**
+
+3.  Click on **Login**.
+![](https://github.com/niravtadvaiya/AWSNotifier/blob/master/docs/4.png?raw=true)
+
+4.  Set the value according to the label shown. To get the Nexmo API key and secret key, see the appendix. To Receive SMS click on **Enable SMS**.
+![](https://github.com/niravtadvaiya/AWSNotifier/blob/master/docs/5.png?raw=true)
+
+5.  Click on **Save**.
