@@ -79,5 +79,4 @@ Steps to use the AWSNotifier app
 3.  Click on **Login**.
 4.  Set the value according to the label shown. To get the Nexmo API key and secret key, see the appendix. To Receive SMS click on **Enable SMS**.
 ![](https://github.com/niravtadvaiya/AWSNotifier/blob/master/docs/5.png?raw=true)
-
 5.  Click on **Save**.
