@@ -34,7 +34,7 @@ To install the AWSNotifier app on Ubuntu, follow the below steps:
 2.  Clone the AWSNotifier repository use the following commands.**
 	** cd ~**
 	**git clone [Visit GitHub!](https://www.github.com)**
-![Alt text](https://github.com/niravtadvaiya/AWSNotifier/blob/master/docs/1.png?raw=true "")
+![](https://github.com/niravtadvaiya/AWSNotifier/blob/master/docs/1.png?raw=true)
 3.  Change the directory to the AWSNotifier.
 	**cd AWSNotifier**
 
@@ -56,7 +56,7 @@ AWS security settings
 
 2.  Select EC2 Service.
 
-3.  On EC2 dashboard, select the EC2 instance where you have installed the Nexmo **AWSNotifier** App.
+3.  On EC2 dashboard, select the EC2 instance where you have installed the Nexmo **AWSNotifier**.
 
 4.  Click on the **Security groups** link as shown in the image below:
 ![](https://github.com/niravtadvaiya/AWSNotifier/blob/master/docs/2.png?raw=true)
