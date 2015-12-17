@@ -77,6 +77,9 @@ Steps to use the AWSNotifier app
 2.  Login with default credentials - username: **admin** and password: **admin.**
 ![](https://github.com/niravtadvaiya/AWSNotifier/blob/master/docs/4.png?raw=true)
 3.  Click on **Login**.
-4.  Set the value according to the label shown. To get the Nexmo API key and secret key, see the appendix. **ENable SMS**.
+4.  Solarized flips between light and dark modes. In each mode, four monotones form
+the core values (with an optional fifth for emphasized content).
+
+
  ![](https://github.com/niravtadvaiya/AWSNotifier/blob/master/docs/5.png?raw=true)
 5.  Click on **Save**.
