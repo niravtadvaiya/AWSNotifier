@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ![](./media/image1.jpeg)
 
 *“Receive real-time SMS notifications for your AWS cloud resources wherever you are”*
@@ -167,3 +168,10 @@ Get Nexmo API Keys
 2.  Click on the **Api Settings**. Key and Secret will display in the top bar as shown in the below image:
 
 > ![](./media/image18.jpeg)
+=======
+# AWSNotifier
+AWSNotifier is one of web base tool which send sms using the Nexmo API. This tool communicate with SNS and send notification on you configured phone number whenever condition get satisfied on cloud. You have to map this tool once with SNS then later you use created topic with any AWS services.
+
+#How to Deploy?
+To Deploy the AWSNotifier Documentation/AWSNotifier_Deploy.docx
+>>>>>>> c3b3e3206355290b64bbd291f76241588ebdcd0c

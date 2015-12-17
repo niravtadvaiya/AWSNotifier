@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 """
 Django settings for AwsNotifier project.
 
@@ -11,20 +12,30 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 """
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+=======
+>>>>>>> c3b3e3206355290b64bbd291f76241588ebdcd0c
 import os
 from urllib2 import urlopen
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+<<<<<<< HEAD
 #AWS_PUBLIC_IP = urlopen('http://instance-data/latest/meta-data/public-ipv4').read()
 AWS_PUBLIC_IP = 'localhost'
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
+=======
+AWS_PUBLIC_IP = urlopen('http://instance-data/latest/meta-data/public-ipv4').read()
+>>>>>>> c3b3e3206355290b64bbd291f76241588ebdcd0c
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'ob3+i2$#v1gs9hiy%b@ub9!-pa&-nd0s1kf62t8s(c88m-acpd'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+<<<<<<< HEAD
 DEBUG = True
+=======
+DEBUG = False
+>>>>>>> c3b3e3206355290b64bbd291f76241588ebdcd0c
 
 ALLOWED_HOSTS = [AWS_PUBLIC_IP]
 
@@ -72,10 +83,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'AwsNotifier.wsgi.application'
 
+<<<<<<< HEAD
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
+=======
+>>>>>>> c3b3e3206355290b64bbd291f76241588ebdcd0c
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -84,8 +98,11 @@ DATABASES = {
 }
 
 
+<<<<<<< HEAD
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
+=======
+>>>>>>> c3b3e3206355290b64bbd291f76241588ebdcd0c
 
 LANGUAGE_CODE = 'en-us'
 
@@ -98,8 +115,11 @@ USE_L10N = True
 USE_TZ = True
 
 
+<<<<<<< HEAD
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
+=======
+>>>>>>> c3b3e3206355290b64bbd291f76241588ebdcd0c
 
 STATIC_URL = '/static/'
 STATIC_PATH = os.path.join(BASE_DIR,'static')

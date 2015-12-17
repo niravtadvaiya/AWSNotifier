@@ -1,5 +1,6 @@
 {% extends 'base.htm' %}
 {% load staticfiles %}
+<<<<<<< HEAD
 {% block title %}configuration{% endblock %}
 {% block body_block %}
         <form method="post" id="forms">{% csrf_token %}
@@ -15,12 +16,28 @@
 			<div  class="client_msg mb-20"></div>
 			<div class="mb-20">
 				<div class="fieldLabel">Nexmo API Key<span class="handCursor"></span></div>
+=======
+{% block title %}Configuration{% endblock %}
+{% block body_block %}
+        <form method="post" id="forms" novalidate="novalidate">{% csrf_token %}
+		<h1 class="heading1">Configuration Settings</h1>
+		   <div class="mainContent">
+			<div class="mb-20 client_msg" id="client_msg"> 
+			{% for message in messages %}
+				<div {% if message.tags %} class="isa_{{ message.tags }}"{% endif %} id="msg_bord">{{ message }}</div>
+			{% endfor %}
+			</div>
+			<div class="mb-20">
+			
+				<div class="fieldLabel">Nexmo Key<span class="handCursor"></span></div>
+>>>>>>> c3b3e3206355290b64bbd291f76241588ebdcd0c
 				<div>
 					<input id="NKey"  type="text" name="NKey"  value="{{nxmo_conf.NKey}}" class="customTxtBox" />
 				</div>
 			</div>
 
 			<div class="mb-20">
+<<<<<<< HEAD
 				<div class="fieldLabel">Nexmo Secret Key<span class="handCursor"></span></div>
 				<div>
 					<input id="NSecret" type="text"  name="NSecret" value="{{nxmo_conf.NSecret}}" class="customTxtBox" />
@@ -40,6 +57,33 @@
 					<input id="NRecv" type="text" name="NRecv" value="{{nxmo_conf.NRecv}}" class="customTxtBox" /> 
 				</div>
 			<div style="color:orange">Type number with country code.eg 1 248 xxxxx</div>
+=======
+				<div class="fieldLabel">Nexmo Secret<span class="handCursor"></span></div>
+				<div>
+					<input id="NSecret" type="text"  name="NSecret" value="{{nxmo_conf.NSecret}}" class="customTxtBox" />
+					<label for="NSecret" generated="true" class="error" id="NSecret_error"></label>
+					<span style="font-size:1em;display:none;" id="processing">We are validating API...<img src='{% static "nexmo-loader.gif" %}' /></span>
+				</div>
+				
+			</div>
+			
+			<div class="mb-20">
+				<div class="fieldLabel">From Number<span class="handCursor"></span></div>
+				<div>
+					<input type="hidden" value="{{nxmo_conf.NexmoFrom}}" id="nexfrom" />
+					<select name="NexmoFrom" id="NexmoFrom" class="customTxtBox">
+						<option value=""> -- Please select -- </option>
+					</select>
+				</div>
+			</div>
+			
+			<div class="mb-20">
+				<div class="fieldLabel">Recipient's Number<span class="handCursor"></span></div>
+				<div>
+					<input id="NRecv" type="text" name="NRecv" value="{{nxmo_conf.NRecv}}" class="customTxtBox" /> 
+				</div>
+			<div style="color:orange">Type number with country code.</div>
+>>>>>>> c3b3e3206355290b64bbd291f76241588ebdcd0c
 			</div>
 			
 			
@@ -66,13 +110,18 @@
 					<input id="password"name="password" type="password" class="customTxtBox" value="{{nxmo_conf.password}}" />
 				</div>
 			</div>
+<<<<<<< HEAD
 			<div style="color:orange">This credentials update effects only this portal not to Nexmo official site.</div><br />
+=======
+			<div style="color:orange">These credentials work only for this app.</div><br />
+>>>>>>> c3b3e3206355290b64bbd291f76241588ebdcd0c
 			
 			<div><input type="submit" value="Save" class="blueBtn"></div
 			<div class="clear"></div>
 		</div>
     </div>
 		</form>
+<<<<<<< HEAD
 
 <script>
 	$(document).ready(function(){
@@ -95,5 +144,132 @@
 			}); 
 		});
 	});
+=======
+<script>
+	$(function(){ 
+	$.validator.addMethod("checkdef", function(value, element) {
+		 if (/^admin$/.test($.trim(value))) {
+			return false;  
+		} else {
+			return true;   
+		};
+	}, 'Please enter different Usename and Password.');
+	$.validator.addMethod("phonechck", function(value, element) {
+		 if (/^[0-9 -+]+$/.test($.trim(value))) {
+			return true; 
+		} else {
+			return false; 
+		};
+	}, 'Please enter the valid Recipients Number.');
+	
+		$("form").validate({
+			rules: {
+				NKey: "required",
+				NSecret: "required",
+				NexmoFrom:"required",
+				NRecv:{required:true,minlength: 11,phonechck:true},
+				UserName:{
+					required:true,
+					checkdef:true
+				},
+				password:{
+					required:true,
+					checkdef:true
+				}
+			},
+			messages: {
+				NKey: "Please enter the Nexmo Key. ",
+				NSecret: "Please enter the Nexmo Secret.",
+				NexmoFrom:"Please select the From Number.",
+				NRecv:{
+					required:"Please enter the Recipients Number.",
+					minlength:"Please enter the Recipients Number with country code.",
+					phonechck: "Please enter the valid Recipients Number."
+				},
+				UserName:{
+					required:"Please enter the Username",
+					checkdef:"Please enter different Username than 'admin'."
+				},
+				password:{
+					required:"Please enter the Password",
+					checkdef:"Please enter different Password than 'admin'."
+				}
+			},
+		})
+	});
+	$(document).ready(function(){
+		var api = $.trim($('#NKey').val());
+		var secret = $.trim($('#NSecret').val());
+
+		$error = true;
+		$('#NSecret').focusout(function() {
+			if($.trim($('#NSecret').val())!='' && $.trim($('#NKey').val())!=''){
+	                        $('#processing').css('display','')
+				ajax_call()
+			}
+		});
+		
+		$('#NKey').focusout(function() {
+			if($.trim($('#NSecret').val())!='' && $.trim($('#NKey').val())!=''){
+				$('#processing').css('display','')
+				ajax_call()
+			}
+		
+		});
+		
+		 
+		fill_dropdown(api, secret);
+	});
+	
+	function fill_dropdown(api, secret){
+		if(secret!='' && api!=''){
+			ajax_call()
+		}
+	}
+
+	function ajax_call(){
+		$nexfrom = $('#nexfrom').val()
+		var datahtml = '<option value=""> -- Please select -- </option>'
+		$.ajax({
+				url: '/ajax_validator/',
+			    type: 'post',
+			    data: $( "form" ).serialize(),
+				success: function(data) {
+					$('#NexmoFrom').html(datahtml)
+					var obj = $.parseJSON(data)
+					if (obj.error == 'false'){
+					    
+						//$('#client_msg').html('')
+						
+                        
+						$error = false;
+						dataArray = obj.html.split(",")
+						$.each(dataArray, function(index, value) { 
+							$selected = ''
+							if(value==$nexfrom) $selected = 'selected="selected"'
+							
+							datahtml+='<option value"'+value+'" '+$selected+'>'+value+'</option>'
+						});
+						$('#NexmoFrom').html(datahtml)
+					}else{
+					
+						$error = true;
+						d = 'client_msg'
+						if(obj.id) {d = obj.id}
+						$('#' + d ).html('<div class="isa_error">'+ obj.html+'</div>')
+						$('#NexmoFrom').html(datahtml)
+					}
+				},
+				error: function(xhr,status,error) { 
+					$('#NexmoFrom').html(data)
+					if($.trim(error)!=""){alert(error)}
+				},
+				
+			}).done(function(){
+				$('#processing').css('display','none')
+			});
+	
+	}
+>>>>>>> c3b3e3206355290b64bbd291f76241588ebdcd0c
 </script>
 {% endblock %}

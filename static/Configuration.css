@@ -40,7 +40,11 @@ body, .body{
 	cursor:pointer;font-family:'Segoe UI';background: #0099c7;padding: 10px 15px; float:right; color: #fff;border: none;font-size: 16px;
 }
 
+<<<<<<< HEAD
 .isa_info, .isa_success, .isa_warning, .isa_error {
+=======
+.isa_info, .isa_success, .isa_warning {
+>>>>>>> c3b3e3206355290b64bbd291f76241588ebdcd0c
 margin: 10px 0px;
 padding:12px;
 }
@@ -58,10 +62,22 @@ padding:12px;
 }
 .isa_error {
     color: #D8000C;
+<<<<<<< HEAD
     background-color: #FFBABA;
+=======
+>>>>>>> c3b3e3206355290b64bbd291f76241588ebdcd0c
 }
 .isa_info i, .isa_success i, .isa_warning i, .isa_error i {
     margin:10px 22px;
     font-size:2em;
     vertical-align:middle;
+<<<<<<< HEAD
 } 
+=======
+} 
+
+
+label.error {
+    color: #D8000C;
+}
+>>>>>>> c3b3e3206355290b64bbd291f76241588ebdcd0c
