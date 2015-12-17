@@ -1,6 +1,6 @@
 # AWSNotifier
 
-![](https://raw.githubusercontent.com/niravtadvaiya/AWSNotifier/master/docs/logo.png)
+![](https://raw.githubusercontent.com/niravtadvaiya/AWSNotifier/master/docs/logo.jpg)
 
 ## Introduction
 
@@ -47,9 +47,9 @@ To install the AWSNotifier app on Ubuntu, follow the below steps:
 
 2.  Clone the AWSNotifier repository use the following commands.**
 
-    ```$ cd ~```
+    $ cd ~
 	
-    ```$ git clone [https://github.com/AdvaiyaLabs/AWSNotifier.git](https://github.com/AdvaiyaLabs/AWSNotifier.git)```
+    $ git clone [https://github.com/AdvaiyaLabs/AWSNotifier.git](https://github.com/AdvaiyaLabs/AWSNotifier.git)
 
 3.  Change the directory to the AWSNotifier.
     ***cd AWSNotifier***
@@ -90,6 +90,7 @@ This will install the following on AWS instance*:*
 	![](https://raw.githubusercontent.com/niravtadvaiya/AWSNotifier/master/docs/4.png)
 3.  Click on **Login**.
 4.  Set the value according to the label shown. To get the Nexmo API key and secret key, see the appendix. To receive SMS from the Nexmo, check **Enable SMS**.
+
 	![](https://raw.githubusercontent.com/niravtadvaiya/AWSNotifier/master/docs/5.png)
 5.  Click on **Save**.
 
