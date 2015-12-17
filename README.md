@@ -81,5 +81,5 @@ Steps to use the AWSNotifier app
 the core values (with an optional fifth for emphasized content).
 
 
-(https://github.com/niravtadvaiya/AWSNotifier/blob/master/docs/5.png)
+![](https://github.com/niravtadvaiya/AWSNotifier/blob/master/docs/5.png)
 5.  Click on **Save**.
