@@ -98,6 +98,8 @@ This will install the following on AWS instance*:*
 2.  Login with default credentials - username: **admin** and password: **admin.**
 
 ![](https://raw.githubusercontent.com/niravtadvaiya/AWSNotifier/master/docs/4.png)
+
+
 3.  Click on **Login**.
 
 
@@ -113,19 +115,19 @@ Steps to configure SNS on AWS
 1.  Login to the AWS Web Console.
 
 2.  Select the **SNS** services from the menu.
-![](https://raw.githubusercontent.com/niravtadvaiya/AWSNotifier/master/docs/5.png)
-
-3.  Click on the **Create Topic**.
 ![](https://raw.githubusercontent.com/niravtadvaiya/AWSNotifier/master/docs/6.png)
 
-4.  Type the **Topic name** and **Display name**. Click on **Create topic**.
+3.  Click on the **Create Topic**.
 ![](https://raw.githubusercontent.com/niravtadvaiya/AWSNotifier/master/docs/7.png)
 
-5.  Click on **Create Subscription**.
+4.  Type the **Topic name** and **Display name**. Click on **Create topic**.
 ![](https://raw.githubusercontent.com/niravtadvaiya/AWSNotifier/master/docs/8.png)
 
-6.  Enter the **Topic ARN**, **Protocol** and set **Endpoint** **&lt;&lt;AWS\_public\_ip&gt;&gt;:9033** as shown in the below image:
+5.  Click on **Create Subscription**.
 ![](https://raw.githubusercontent.com/niravtadvaiya/AWSNotifier/master/docs/9.png)
+
+6.  Enter the **Topic ARN**, **Protocol** and set **Endpoint** **&lt;&lt;AWS\_public\_ip&gt;&gt;:9033** as shown in the below image:
+![](https://raw.githubusercontent.com/niravtadvaiya/AWSNotifier/master/docs/10.png)
 
 7.  Click on **Create Subscription.**
 
@@ -133,20 +135,20 @@ Configure Notification on AWS Cloudwatch
 =========================================
 
 1.  Select the **CloudWatch** service from the Menu.
-![](https://raw.githubusercontent.com/niravtadvaiya/AWSNotifier/master/docs/10.png)
+![](https://raw.githubusercontent.com/niravtadvaiya/AWSNotifier/master/docs/11.png)
 
 2.  Click on the **Browse Metrics.
-![](https://raw.githubusercontent.com/niravtadvaiya/AWSNotifier/master/docs/11.png)
+![](https://raw.githubusercontent.com/niravtadvaiya/AWSNotifier/master/docs/12.png)
 
 3.  Select the metrics to monitor, for example - click on **Per-Instance Metrics**.
 
 4.  Select the metrics on which you want to set alarm.
 
 5.  Click on **Create Alarm**.
-![](https://raw.githubusercontent.com/niravtadvaiya/AWSNotifier/master/docs/12.png)
+![](https://raw.githubusercontent.com/niravtadvaiya/AWSNotifier/master/docs/13.png)
 
 6.  **Create Alarm** window will open. Perform the following steps:
-![](https://raw.githubusercontent.com/niravtadvaiya/AWSNotifier/master/docs/13.png)
+![](https://raw.githubusercontent.com/niravtadvaiya/AWSNotifier/master/docs/14.png)
 
 <!-- -->
 
