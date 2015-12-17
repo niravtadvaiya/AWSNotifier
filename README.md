@@ -47,9 +47,9 @@ To install the AWSNotifier app on Ubuntu, follow the below steps:
 
 2.  Clone the AWSNotifier repository use the following commands.**
 
-    ```cd ~```
+    ```$ cd ~```
 	
-    ```git clone [https://github.com/AdvaiyaLabs/AWSNotifier.git](https://github.com/AdvaiyaLabs/AWSNotifier.git)```
+    ```$ git clone [https://github.com/AdvaiyaLabs/AWSNotifier.git](https://github.com/AdvaiyaLabs/AWSNotifier.git)```
 
 3.  Change the directory to the AWSNotifier.
     ***cd AWSNotifier***
@@ -82,14 +82,14 @@ This will install the following on AWS instance*:*
 
 ![](https://raw.githubusercontent.com/niravtadvaiya/AWSNotifier/master/docs/2.png)
 
-1.  In the popup, click on **Add Rule** to define the rule to access on internet.
+6.  In the popup, click on **Add Rule** to define the rule to access on internet.
 
-2.  Select the **Custom TCP Rule,** and set the port number as **9033** and set source as **0.0.0.0/0** or specific IP to access internet as shown in the below image:
+7.  Select the **Custom TCP Rule,** and set the port number as **9033** and set source as **0.0.0.0/0** or specific IP to access internet as shown in the below image:
 
 
 ![](https://raw.githubusercontent.com/niravtadvaiya/AWSNotifier/master/docs/3.png)
 
-3.  Click on **Save**.
+8.  Click on **Save**.
 
 #Steps to use the AWSNotifier app
 
@@ -150,17 +150,14 @@ Configure Notification on AWS Cloudwatch
 6.  **Create Alarm** window will open. Perform the following steps:
 ![](https://raw.githubusercontent.com/niravtadvaiya/AWSNotifier/master/docs/14.png)
 
-<!-- -->
+7.  Set the threshold to raise notification
 
-1.  Set the threshold to raise notification
+8.  Select topic **NexmoSMS\_Notification** from the **Send notification to** drop down menu.
 
-2.  Select topic **NexmoSMS\_Notification** from the **Send notification to** drop down menu.
+9.  Click on **Create Alarm**.
 
-3.  Click on **Create Alarm**.
 
-<!-- -->
-
-1.  SMS will be received on the satisfaction of the condition.
+10.  SMS will be received on the satisfaction of the condition.
 
 Appendix
 ========
