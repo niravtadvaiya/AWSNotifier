@@ -60,3 +60,8 @@ AWS security settings
 ![](https://github.com/niravtadvaiya/AWSNotifier/blob/master/docs/2.png)
 5.  Select **Inbound** and click on **Edit** as shown in the image below.
 ![](https://github.com/niravtadvaiya/AWSNotifier/blob/master/docs/3.png?raw=true)
+1.  In the popup, click on **Add Rule** to define the rule to access on internet.
+
+2.  Select the **Custom TCP Rule,** and set the port number as **9033** and set source as **0.0.0.0/0** or specific IP to access internet as shown in the below image:
+
+![](https://github.com/niravtadvaiya/AWSNotifier/blob/master/docs/4.png?raw=true)
