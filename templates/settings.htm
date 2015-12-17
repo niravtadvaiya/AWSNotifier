@@ -2,16 +2,17 @@
 {% load staticfiles %}
 {% block title %}configuration{% endblock %}
 {% block body_block %}
-        <form method="post">{% csrf_token %}
+        <form method="post" id="forms">{% csrf_token %}
 		<h1 class="heading1">Configuration Settings</h1>
 			<div class="mainContent">
-			{% if messages %}
-			<div class="mb-20">
+					{% if messages %}
+						<div class="mb-20">
 						{% for message in messages %}
 						<div {% if message.tags %} class="isa_{{ message.tags }}"{% endif %}>{{ message }}</div>
 						{% endfor %}
 						</div>
 					{% endif %}
+			<div  class="client_msg mb-20"></div>
 			<div class="mb-20">
 				<div class="fieldLabel">Nexmo API Key<span class="handCursor"></span></div>
 				<div>
@@ -25,12 +26,20 @@
 					<input id="NSecret" type="text"  name="NSecret" value="{{nxmo_conf.NSecret}}" class="customTxtBox" />
 				</div>
 			</div>
+
+			<div class="mb-20">
+				<div class="fieldLabel">Nexmo From Number<span class="handCursor"></span></div>
+				<div>
+					<input id="NFromNumber" type="text"  name="NFromNumber" value="{{nxmo_conf.NFromNumber}}" class="customTxtBox" />
+				</div>
+			</div>			
 			
 			<div class="mb-20">
 				<div class="fieldLabel">Recipients Number<span class="handCursor"></span></div>
 				<div>
 					<input id="NRecv" type="text" name="NRecv" value="{{nxmo_conf.NRecv}}" class="customTxtBox" /> 
 				</div>
+			<div style="color:orange">Type number with country code.eg 1 248 xxxxx</div>
 			</div>
 			
 			
@@ -64,4 +73,27 @@
 		</div>
     </div>
 		</form>
+
+<script>
+	$(document).ready(function(){
+
+		$error = false;
+		$("form").submit(function(e){
+    		e.preventDefault();
+  		});
+		$('#NSecret').focusout(function() {
+			$.ajax({
+				url: '/ajax_validator/',
+			    type: 'post', //this is the default though, you don't actually need to always mention it
+			    data: $( "form" ).serialize(),
+				success: function(data) {
+    				alert(data);
+				},
+				error: function(xhr,status,error) { 
+    				alert(error);
+				}
+			}); 
+		});
+	});
+</script>
 {% endblock %}

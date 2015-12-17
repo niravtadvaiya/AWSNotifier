@@ -15,8 +15,8 @@ import os
 from urllib2 import urlopen
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-AWS_PUBLIC_IP = urlopen('http://instance-data/latest/meta-data/public-ipv4').read()
-
+#AWS_PUBLIC_IP = urlopen('http://instance-data/latest/meta-data/public-ipv4').read()
+AWS_PUBLIC_IP = 'localhost'
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
@@ -24,7 +24,7 @@ AWS_PUBLIC_IP = urlopen('http://instance-data/latest/meta-data/public-ipv4').rea
 SECRET_KEY = 'ob3+i2$#v1gs9hiy%b@ub9!-pa&-nd0s1kf62t8s(c88m-acpd'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [AWS_PUBLIC_IP]
 
