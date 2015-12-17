@@ -49,8 +49,10 @@ To install the AWSNotifier app on Ubuntu, follow the below steps:
 1.  Go to AWS Instance terminal ie. Putty or SSH
 
 2.  Clone the AWSNotifier repository use the following commands.**
-    *cd ~****
-    **git clone ***[***https://github.com/AdvaiyaLabs/AWSNotifier.git***](https://github.com/AdvaiyaLabs/AWSNotifier.git)
+    ***cd ~***
+	
+    ***git clone ***
+	![Alt text](https://github.com/niravtadvaiya/AWSNotifier/blob/master/docs/1.png?raw=true "")
 
 3.  Change the directory to the AWSNotifier.
     ***cd AWSNotifier***
@@ -76,17 +78,18 @@ AWS security settings
 3.  On EC2 dashboard, select the EC2 instance where you have installed the Nexmo **AWSNotifier** App.
 
 4.  Click on the **Security groups** link as shown in the image below:
-    ![](./media/image4.png)
+	![](https://github.com/niravtadvaiya/AWSNotifier/blob/master/docs/2.png?raw=true)
 
 5.  Select **Inbound** and click on **Edit** as shown in the image below.
 
-> ![](./media/image5.png)
+	![](https://github.com/niravtadvaiya/AWSNotifier/blob/master/docs/3.png?raw=true)
+
 
 1.  In the popup, click on **Add Rule** to define the rule to access on internet.
 
 2.  Select the **Custom TCP Rule,** and set the port number as **9033** and set source as **0.0.0.0/0** or specific IP to access internet as shown in the below image:
 
-> ![](./media/image6.png)
+![](https://github.com/niravtadvaiya/AWSNotifier/blob/master/docs/4.png?raw=true)
 
 1.  Click on **Save**.
 
@@ -98,10 +101,10 @@ Steps to use the AWSNotifier app
 2.  Login with default credentials - username: **admin** and password: **admin.**
 
 3.  Click on **Login**.
-    ![](./media/image7.png)
+	![](https://github.com/niravtadvaiya/AWSNotifier/blob/master/docs/4.png?raw=true)
 
 4.  Set the value according to the label shown. To get the Nexmo API key and secret key, see the appendix. To receive SMS from the Nexmo, check **Enable SMS**.
-    ![](./media/image8.png)
+![](https://github.com/niravtadvaiya/AWSNotifier/blob/master/docs/5.png?raw=true)
 
 5.  Click on **Save**.
 
@@ -110,16 +113,16 @@ Steps to use the AWSNotifier app
 1.  Login to the AWS Web Console.
 
 2.  Select the **SNS** services from the menu.
-    ![](./media/image9.png)
+	![](https://github.com/niravtadvaiya/AWSNotifier/blob/master/docs/6.png?raw=true)
 
 3.  Click on the **Create Topic**.
-    ![](./media/image10.png)
+	![](https://github.com/niravtadvaiya/AWSNotifier/blob/master/docs/7.png?raw=true)
 
 4.  Type the **Topic name** and **Display name**. Click on **Create topic**.
-    ![](./media/image11.png)
+	![](https://github.com/niravtadvaiya/AWSNotifier/blob/master/docs/8.png?raw=true)
 
 5.  Click on **Create Subscription**.
-    ![](./media/image12.png)
+	![](https://github.com/niravtadvaiya/AWSNotifier/blob/master/docs/9.png?raw=true)
 
 6.  Enter the **Topic ARN**, **Protocol** and set **Endpoint** **&lt;&lt;AWS\_public\_ip&gt;&gt;:9033** as shown in the below image:
     ![](./media/image13.png)
@@ -130,20 +133,20 @@ Configure Notification on AWS Cloudwatch
 =========================================
 
 1.  Select the **CloudWatch** service from the Menu.
-    ![](./media/image14.png)
+    ![](https://github.com/niravtadvaiya/AWSNotifier/blob/master/docs/10.png?raw=true)
 
 2.  Click on the **Browse Metrics.
-    **![](./media/image15.png)
+    ![](https://github.com/niravtadvaiya/AWSNotifier/blob/master/docs/11.png?raw=true)
 
 3.  Select the metrics to monitor, for example - click on **Per-Instance Metrics**.
 
 4.  Select the metrics on which you want to set alarm.
 
 5.  Click on **Create Alarm**.
-    ![](./media/image16.png)
+    ![](https://github.com/niravtadvaiya/AWSNotifier/blob/master/docs/12.png?raw=true)
 
 6.  **Create Alarm** window will open. Perform the following steps:
-    ![](./media/image17.png)
+    ![](https://github.com/niravtadvaiya/AWSNotifier/blob/master/docs/13.png?raw=true)
 
 <!-- -->
 
@@ -167,11 +170,4 @@ Get Nexmo API Keys
 
 2.  Click on the **Api Settings**. Key and Secret will display in the top bar as shown in the below image:
 
-> ![](./media/image18.jpeg)
-=======
-# AWSNotifier
-AWSNotifier is one of web base tool which send sms using the Nexmo API. This tool communicate with SNS and send notification on you configured phone number whenever condition get satisfied on cloud. You have to map this tool once with SNS then later you use created topic with any AWS services.
-
-#How to Deploy?
-To Deploy the AWSNotifier Documentation/AWSNotifier_Deploy.docx
->>>>>>> c3b3e3206355290b64bbd291f76241588ebdcd0c
+	![](https://github.com/niravtadvaiya/AWSNotifier/blob/master/docs/14.png?raw=true)
