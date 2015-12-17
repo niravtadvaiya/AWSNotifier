@@ -76,12 +76,10 @@ This will install the following on AWS instance*:*
 
 4.  Click on the **Security groups** link as shown in the image below:
 
-![](https://raw.githubusercontent.com/niravtadvaiya/AWSNotifier/master/docs/1.png)
+	![](https://raw.githubusercontent.com/niravtadvaiya/AWSNotifier/master/docs/1.png)
 
 5.  Select **Inbound** and click on **Edit** as shown in the image below.
-
-![](https://raw.githubusercontent.com/niravtadvaiya/AWSNotifier/master/docs/2.png)
-
+	![](https://raw.githubusercontent.com/niravtadvaiya/AWSNotifier/master/docs/2.png)
 6.  In the popup, click on **Add Rule** to define the rule to access on internet.
 
 7.  Select the **Custom TCP Rule,** and set the port number as **9033** and set source as **0.0.0.0/0** or specific IP to access internet as shown in the below image:
