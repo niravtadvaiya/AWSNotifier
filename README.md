@@ -24,3 +24,18 @@ Features
  - Real time notification
  - It supports Ubuntu operating systems (OS)
  - Compatible with any AWS service which is mapped to AWS SNS
+ 
+ 
+Steps to deploy the AWSNotifier
+=================================
+To install the AWSNotifier app on Ubuntu, follow the below steps:
+1.  Go to AWS Instance terminal ie. Putty or SSH
+2.  Clone the AWSNotifier repository use the following commands.**
+	** cd ~**
+	**git clone [Visit GitHub!](https://www.github.com)**
+![](https://github.com/niravtadvaiya/AWSNotifier/blob/master/docs/1.png?raw=true)
+3.  Change the directory to the AWSNotifier.
+	**cd AWSNotifier**
+
+4.  Run the following command to install and configure the Nexmo services.
+	**sudo python install.py**
