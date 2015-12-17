@@ -39,3 +39,24 @@ To install the AWSNotifier app on Ubuntu, follow the below steps:
 
 4.  Run the following command to install and configure the Nexmo services.
 	**sudo python install.py**
+This will install the following on AWS instance*:*
+
+-   Django 1.8.5
+
+-   Nexmo library
+
+-   Python 2.7
+
+AWS security settings
+=====================
+
+1.  Login to the AWS Web Console.
+
+2.  Select EC2 Service.
+
+3.  On EC2 dashboard, select the EC2 instance where you have installed the Nexmo **AWSNotifier**.
+
+4.  Click on the **Security groups** link as shown in the image below:
+![](https://github.com/niravtadvaiya/AWSNotifier/blob/master/docs/2.png)
+5.  Select **Inbound** and click on **Edit** as shown in the image below.
+![](https://github.com/niravtadvaiya/AWSNotifier/blob/master/docs/3.png?raw=true)
